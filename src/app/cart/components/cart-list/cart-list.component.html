@@ -1,0 +1,26 @@
+<div class="container">
+  <ng-container *ngIf="productInCart.length === 0; then emptyCart; else cartTable"></ng-container>
+  <ng-template #emptyCart>
+    <div class="alert alert-primary" role="alert">
+      Cart is empty
+    </div>
+  </ng-template>
+  <ng-template #cartTable>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of productInCart">
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td><button class="btn btn-danger" (click)="removeProductFromCart(product)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+  </ng-template>
+</div>

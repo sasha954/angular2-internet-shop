@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="products.length === 0; then emptyProducts; else productList"></div>
+    <ng-template #emptyProducts>
+      <div class="alert alert-danger" role="alert">
+        Product list is empty
+      </div>
+    </ng-template>
+    <ng-template #productList>
+      <div class="col-4" *ngFor="let product of products" >
+        <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
+      </div>
+    </ng-template>
+  </div>
+</div>
