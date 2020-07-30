@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './first/first-component/first-component.component';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './products/components/product/product.component';
 
 @NgModule({
   declarations: [
