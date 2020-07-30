@@ -1,1 +1,9 @@
-<p>first-component works!</p>
+<div class="list-wrapper">
+  <ul class="list-group">
+    <li class="list-group-item">Name: {{name}}</li>
+    <li class="list-group-item">Description: {{description}}</li>
+    <li class="list-group-item">Price: {{price}}</li>
+    <li class="list-group-item">Is Available: {{isAvailable}}</li>
+    <li class="list-group-item"><span *ngFor="let tag of tags" class="badge badge-info">{{tag}}</span></li>
+  </ul>
+</div>
