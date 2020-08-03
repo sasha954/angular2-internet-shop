@@ -19,11 +19,12 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
 
-  getProducts(): void {
-    this.products = this.productService.getProducts();
+  onAddToCart(product: Product): void {
+    this.cartService.putProductToCart(product);
   }
 
-  addToCart(product: Product): void {
-    this.cartService.putProductToCart(product);
+  // метод не используется в шаблоне, можно сделать приватным
+  private getProducts(): void {
+    this.products = this.productService.getProducts();
   }
 }

@@ -9,7 +9,8 @@ import {Product} from '../../../products/model/product.model';
 })
 export class CartListComponent implements OnInit {
 
-  private productInCart: Array<Product>;
+  // private productInCart: Array<Product>;
+  productInCart: Array<Product>; // используется в шаблоне - должно бцть публичным
 
   constructor(private cartService: CartService) {
   }
@@ -18,11 +19,13 @@ export class CartListComponent implements OnInit {
     this.getProductsInCart();
   }
 
-  getProductsInCart(): void {
-    this.productInCart = this.cartService.getProductInCart();
+  // префикс on--- говорит о том, что это обработчик - удобно
+  onRemoveProductFromCart(product: Product): void {
+    this.cartService.removeProductFromCart(product);
   }
 
-  removeProductFromCart(product: Product): void {
-    this.cartService.removeProductFromCart(product);
+  // не используется в шаблоне - делаем приватным
+  private getProductsInCart(): void {
+    this.productInCart = this.cartService.getProductInCart();
   }
 }
