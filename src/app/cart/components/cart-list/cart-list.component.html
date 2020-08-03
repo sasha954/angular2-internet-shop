@@ -18,7 +18,7 @@
     <tr *ngFor="let product of productInCart">
       <td>{{product.name}}</td>
       <td>{{product.price}}</td>
-      <td><button class="btn btn-danger" (click)="removeProductFromCart(product)">Delete</button></td>
+      <td><button class="btn btn-danger" (click)="onRemoveProductFromCart(product)">Delete</button></td>
     </tr>
     </tbody>
   </table>
